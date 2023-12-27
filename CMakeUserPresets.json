@@ -1,0 +1,9 @@
+{
+    "version": 4,
+    "vendor": {
+        "conan": {}
+    },
+    "include": [
+        "/home/bchelste/Artem/ottrgn/pybind11_mock/ottergon/build/CMakePresets.json"
+    ]
+}

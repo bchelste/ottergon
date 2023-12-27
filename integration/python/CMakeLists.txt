@@ -9,6 +9,7 @@ set(${PROJECT_NAME}_headers
         wrapper_cursor.hpp
         wrapper_document.hpp
         wrapper_document_id.hpp
+        spark_expose.hpp
 )
 
 set(${PROJECT_NAME}_sources
@@ -21,6 +22,7 @@ set(${PROJECT_NAME}_sources
         wrapper_cursor.cpp
         wrapper_document.cpp
         wrapper_document_id.cpp
+        spark_expose.cpp
 )
 
 set(otterbrix_LIBS

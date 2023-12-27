@@ -6,6 +6,7 @@
 #include "wrapper_database.hpp"
 #include "wrapper_document.hpp"
 #include "wrapper_document_id.hpp"
+#include "spark_expose.hpp"
 
 #include <boost/uuid/uuid.hpp>            // uuid class
 #include <boost/uuid/uuid_generators.hpp> // generators
@@ -121,4 +122,11 @@ PYBIND11_MODULE(otterbrix, m) {
         .def("sort", &wrapper_cursor::sort, py::arg("key_or_list"), py::arg("direction") = py::none());
 
     m.def("to_aggregate", &test_to_statement);
+
+    py::class_<spark_expose>(m, "Spark")
+        .def(py::init([](){ return spark_expose(); }))
+        .def("print_msg", &spark_expose::output_message, "prints the current message")
+        .def("two_sum", &spark_expose::two_sum, "sum of two ints")
+        .def("get_42", &spark_expose::get_42, "return 42");
+
 }
